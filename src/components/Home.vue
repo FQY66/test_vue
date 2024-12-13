@@ -51,14 +51,17 @@
         <el-header >
 <!--          <i class="el-icon-open"  style="font-size: 30px" @click="handlecollapse"> </i>-->
 
-          <i class="el-icon-s-fold" v-show="!iscollapse" style="font-size: 30px" @click="handlecollapse"></i>
-          <i class="el-icon-s-unfold" v-show="iscollapse" style="font-size: 30px" @click="handlecollapse"></i>
+         <div style="cursor: pointer">
+           <i class="el-icon-s-fold" v-show="!iscollapse" style="font-size: 30px" @click="handlecollapse"></i>
+           <i class="el-icon-s-unfold" v-show="iscollapse" style="font-size: 30px" @click="handlecollapse"></i>
+         </div>
 
             <el-breadcrumb separator="/">
               <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-              <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-              <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-              <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+              <el-breadcrumb-item :to="{ path: '/' }">活动管理</el-breadcrumb-item>
+              <el-breadcrumb-item :to="{ path: '/' }">活动列表</el-breadcrumb-item>
+              <el-breadcrumb-item :to="{ path: '/' }">活动详情</el-breadcrumb-item>
+              <el-breadcrumb-item ></el-breadcrumb-item>
             </el-breadcrumb>
 
           <div style="flex: 1;width: 0;display: flex;align-items: center;justify-content: end">
