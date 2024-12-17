@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import HomeMain from "../components/Home.vue";
+import User from "../components/views/User.vue";
+import Welcome from "../components/views/Welcome.vue"
+import Finace from "../components/views/Finace.vue";
+import Income from "../components/views/Income.vue";
+import Loan from "../components/views/Loan.vue";
 
 Vue.use(Router)
 
@@ -10,37 +14,30 @@ export default new Router({
     {
       path: '/',
       name: 'HomeMain',
-      component: HomeMain
+      component: HomeMain,
+      redirect: '/Welcome',
+      children: [
+        {
+          path: 'Welcome',
+          component: Welcome
+        },
+        {
+          path: '/User',
+          component: User
+        },
+        {
+          path: '/Finace',
+          component: Finace
+        },
+        {
+          path: '/Loan',
+          component: Loan
+        },
+        {
+          path: '/Income',
+          component: Income
+        }
+      ]
     },
-    {
-      path: '/a',
-      name: 'HomeMain',
-      component: HomeMain
-    },
-    {
-      path: '/b',
-      name: 'HomeMain',
-      component: HomeMain
-    },
-    {
-      path: '/c',
-      name: 'HomeMain',
-      component: HomeMain
-    },
-    {
-      path: '/d',
-      name: 'HomeMain',
-      component: HomeMain
-    },
-    {
-      path: '/f',
-      name: 'HomeMain',
-      component: HomeMain
-    },
-    {
-      path:'/HelloWorld',
-      name:'HelloWordld',
-      component:HelloWorld
-    }
   ]
 })
